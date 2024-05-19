@@ -1,0 +1,46 @@
+layout {
+    tab name="Shell" focus=true {
+        pane
+    }
+
+    tab name="Nvim" {
+        pane command="nvim"
+    }
+
+    default_tab_template {
+        children 
+        pane size=1 borderless=true {
+            plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+                format_left   "{mode} {tabs}"
+                format_center ""
+                format_right  "{command_git_branch} #[fg=red,bold,italic]ADRA #[fg=red]{datetime}#[fg=red]"
+                format_space  ""
+
+                border_enabled  "false"
+                border_char     "─"
+                border_format   "#[fg=#6C7086]{char}"
+                border_position "top"
+
+                hide_frame_for_single_pane "true"
+
+                mode_normal  "#[fg=green] {name}"
+                mode_tmux    "#[fg=white] {name}"
+                mode_pane    "#[fg=magenta] {name}"
+
+                mode_default_to_mode "pane"
+           
+                tab_normal      "#[fg=black]#[fg=cyan,bg=black] {index} {name} #[fg=black]"
+                tab_active      "#[fg=yellow]#[fg=black,bg=yellow,bold,italic] {index} {name} #[fg=yellow]"
+                
+                command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
+                command_git_branch_format      "#[fg=blue] {stdout} "
+                command_git_branch_interval    "10"
+                command_git_branch_rendermode  "static"
+
+                datetime        "#[fg=white,bg=red,bold] {format} "
+                datetime_format "%H:%M  %a, %d/%m/%y"
+                datetime_timezone "America/Lima"
+            }
+        }
+    }
+}
