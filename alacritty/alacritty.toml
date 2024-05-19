@@ -1,45 +1,17 @@
+import = ["~/.config/alacritty/current_scheme.toml"]
+
 [window]
-#opacity = 0.85
+opacity = 0.85
 padding = { x = 20, y = 15 }
 startup_mode = "Maximized"
 
 [font]
-normal = { family = "IosevkaTerm", style="SemiBold"}
+normal = { family = "IosevkaTerm", style = "SemiBold" }
 italic = { style = "SemiBold Italic" }
 size = 15
-
-[colors.primary]
-background = "#09141B"
-foreground = "#DEB88D"
-
-[colors.normal]
-black = "#17384C"
-red = "#D15123"
-green = "#027C9B"
-yellow = "#FCA02F"
-blue = "#1E4950"
-magenta = "#68D4F1"
-cyan = "#50A3B5"
-white = "#DEB88D"
-
-[colors.bright]
-black = "#434B53"
-red = "#D48678"
-green = "#628D98"
-yellow = "#FDD39F"
-blue = "#1BBCDD"
-magenta = "#BBE3EE"
-cyan = "#87ACB4"
-white = "#FEE4CE"
-
-[colors.selection]
-background = "#1E4962"
-foreground = "#FEE4CE"
-
-[colors.cursor]
-text = "CellBackground"
-cursor = "#FCA02F"
+builtin_box_drawing = false
+# offset = { x = 2, y = 2 }
 
 [cursor.style]
 shape = "Beam"
-blinking = "On" 
+blinking = "On"
