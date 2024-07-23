@@ -152,7 +152,7 @@ keybinds clear-defaults=true {
     shared_except "locked" {
         // Keybinds plugin
         bind "Alt y" {
-            LaunchOrFocusPlugin "file:~/.config/zellij/plugins/zellij_forgot.wasm"{
+            LaunchOrFocusPlugin "https://github.com/karimould/zellij-forgot/releases/download/0.4.0/zellij_forgot.wasm"{
                 "LOAD_ZELLIJ_BINDINGS" "false"
                 name "Keybinds"
                 
@@ -618,7 +618,7 @@ default_layout "work"
 
 // The folder in which Zellij will look for themes
 //
-theme_dir "/home/adra/.config/zellij/theme"
+theme_dir "/home/ardam/.config/zellij/theme"
 
 // Enable or disable the rendering of styled and colored underlines (undercurl).
 // May need to be disabled for certain unsupported terminals
