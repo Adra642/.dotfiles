@@ -3,7 +3,7 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 -- Color scheme:
- config.color_scheme = 'Sea Shells (Gogh)'
+ config.color_scheme = 'Kanagawa (Gogh)'
 -- Spacedust
 -- Nocturnal Winter
 -- Galaxy
@@ -35,29 +35,13 @@ local config = wezterm.config_builder()
 -- }
 
 -- Background
-config.background = {
-  {
-    source = {
-      File="/home/adra/Pictures/firewatch-sunset.jpeg",
-    },
-    horizontal_align = "Center",
-    hsb = dimmer,
-    
-    repeat_x = 'Mirror',
-    hsb = {
-      saturation = 0.95,
-      brightness = 0.10,
-    },
-    opacity = 0.9
-  },
-}
+config.window_background_opacity = 0.9
 config.enable_scroll_bar = true
 config.window_close_confirmation = "NeverPrompt"
 
-
 -- Font
-config.font = wezterm.font('IosevkaTerm Extended', { weight = 'Bold' })
-config.font_size = 13.0
+config.font = wezterm.font('IosevkaTerm NF')
+config.font_size = 16.0
 config.line_height = 1.2
 
 --Cursor
