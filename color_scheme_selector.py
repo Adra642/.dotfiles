@@ -1,22 +1,33 @@
 import os
-import json
 import toml
+from pathlib import Path
+import shutil
 
-# Load the JSON data from the file
+CONFIG_DIR = Path(os.environ['HOME']) / '.config'
+COLOR_SCHEMES_FILE = CONFIG_DIR / 'color_schemes.toml'
+ALACRITTY_THEME_FILE = CONFIG_DIR / 'alacritty' / 'current_scheme.toml'
+ZELLIJ_THEME_FILE = CONFIG_DIR / 'zellij' / 'theme' / 'scheme.kdl'
+
 def load_schemes():
-    home = os.environ['HOME']
-    with open(f'{home}/.config/color_schemes.json', 'r') as file:
-        data = json.load(file)
-    return data
+    """Load the color schemes from the TOML file."""
+    try:
+        with open(COLOR_SCHEMES_FILE, 'r') as file:
+            return toml.load(file)
+    except FileNotFoundError:
+        print(f"Error: {COLOR_SCHEMES_FILE} not found.")
+        exit(1)
+    except toml.TomlDecodeError:
+        print(f"Error: Failed to decode {COLOR_SCHEMES_FILE}.")
+        exit(1)
 
-# Show the available schemes
 def show_schemes(schemes):
+    """Display the available color schemes."""
     print("\033[94m" + "Available schemes:" + "\033[0m")
     for i, scheme in enumerate(schemes):
         print(f"[{i}] {scheme}")
 
-# Validate the input
 def select_scheme(schemes):
+    """Prompt the user to select a color scheme."""
     while True:
         current_scheme = input("\033[94m" + "Please enter the color scheme number or 'x' to exit: " + "\033[0m")
         if current_scheme.lower() == 'x':
@@ -24,26 +35,29 @@ def select_scheme(schemes):
             exit(0)
         try:
             current_scheme = int(current_scheme)
+            if 0 <= current_scheme < len(schemes):
+                return current_scheme
+            else:
+                print(f"\033[31mInvalid input. The number must be between 0 and {len(schemes) - 1}.\033[0m")
         except ValueError:
-            print("\033[31m" + "Invalid input. Please enter an integer." + "\033[0m")
-            continue
-        if current_scheme >= len(schemes):
-            print("\033[31m" + "Invalid input. The number must be less than " + str(len(schemes)) + "\033[0m")
-            continue
-        break
-    return current_scheme
+            print("\033[31mInvalid input. Please enter an integer.\033[0m")
 
-# Save the TOML file
 def save_toml_file(scheme_data):
-    home = os.environ['HOME']
-    toml_string = toml.dumps(scheme_data)
-    with open(f'{home}/.config/alacritty/current_scheme.toml', 'w') as file:
-        file.write(toml_string)
+    """Save the selected color scheme to a TOML file."""
+    try:
+        toml_string = toml.dumps(scheme_data)
+        with open(ALACRITTY_THEME_FILE, 'w') as file:
+            file.write(toml_string)
+    except IOError:
+        print(f"Error: Failed to write to {ALACRITTY_THEME_FILE}.")
+        exit(1)
 
 def is_zellij_installed():
-    return os.system('which zellij > /dev/null 2>&1') == 0
+    """Check if Zellij is installed."""
+    return shutil.which('zellij') is not None
 
 def map_color_scheme(scheme_data):
+    """Map the color scheme to Zellij format."""
     primary_colors = scheme_data['colors']['primary']
     normal_colors = scheme_data['colors']['normal']
 
@@ -68,18 +82,23 @@ def map_color_scheme(scheme_data):
     color_string += "   }\n}"
 
     return color_string
-
 def save_kdl_file(color_string):
-    home = os.environ['HOME']
-    with open(f'{home}/.config/zellij/theme/scheme.kdl', 'w') as file:
-        file.write(color_string)   
+    """Save the Zellij color scheme to a KDL file."""
+    try:
+        with open(ZELLIJ_THEME_FILE, 'w') as file:
+            file.write(color_string)
+    except IOError:
+        print(f"Error: Failed to write to {ZELLIJ_THEME_FILE}.")
+        exit(1)
 
 def set_zellij_color_scheme(scheme_data):
+    """Set the Zellij color scheme."""
     color_string = map_color_scheme(scheme_data)
     save_kdl_file(color_string)
     os.system('zellij ka -y > /dev/null 2>&1')
 
 def get_user_confirmation():
+    """Prompt the user for confirmation."""
     while True:
         user_input = input("\033[31m" + "Warning: " + "\033[0m" + "The script will close Zellij if it is running. Do you want to continue? (y/n): ").strip().lower()
         if user_input in ['y', 'n']:
@@ -87,6 +106,7 @@ def get_user_confirmation():
         print("Invalid input. Please enter 'y' or 'n'.")
 
 def set_color_schemes():
+    """Main function to set the color schemes."""
     print("\033[32m" + "Info: " + "\033[0m" + "This script will change the color schemes for Zellij, WezTerm, and Alacritty.")
 
     if not get_user_confirmation():
@@ -98,10 +118,10 @@ def set_color_schemes():
     show_schemes(schemes)
     current_scheme = select_scheme(schemes)
     scheme_data = data['schemes'][schemes[current_scheme]]
-    print(scheme_data)
     save_toml_file(scheme_data)
 
     if is_zellij_installed():
         set_zellij_color_scheme(scheme_data)
 
-set_color_schemes()
+if __name__ == "__main__":
+    set_color_schemes()
