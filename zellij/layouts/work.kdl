@@ -37,7 +37,7 @@ layout {
                 mode_default_to_mode "pane"
            
                 tab_normal      "#[fg=green]#[fg=black,bg=green] {name} #[fg=green]"
-                tab_active      "#[fg=yellow]#[fg=black,bg=yellow,bold,italic] {name} #[fg=yellow]"
+                tab_active      "#[fg=yellow]#[fg=black,bg=yellow,italic] {name} #[fg=yellow]"
 
                 datetime        "#[bg=red,fg=black] 󱑎 {format} "
                 datetime_format "%H:%M  󰸗 %a,%d/%m/%y"

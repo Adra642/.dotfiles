@@ -1,5 +1,5 @@
 username() {
-   echo "%{$fg_bold[red]%}%n:%{$reset_color%}"
+   echo "%{$fg[red]%}%n:%{$reset_color%}"
 }
 
 # current directory, two levels deep
@@ -8,7 +8,7 @@ directory() {
 }
 
 status() {
-   echo "%(?:%{$fg_bold[cyan]%}%1{󰶻%}:%{$fg_bold[red]%}%1{󰶻%})"
+   echo "%(?:%{$fg[cyan]%}%1{󰶻%}:%{$fg[red]%}%1{󰶻%})"
 }
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}±[%{$fg[red]%}"
