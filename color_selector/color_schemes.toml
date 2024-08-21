@@ -54,7 +54,7 @@ cyan = "#EA9A97"
 white = "#E0DEF4"
 
 [schemes.rose_pine_moon.colors.selection]
-text = "#E0DEF4"
+foreground = "#E0DEF4"
 background = "#44415A"
 
 [schemes.rose_pine_moon.colors.cursor]
@@ -127,28 +127,28 @@ background = "#1e1e2e"
 foreground = "#cdd6f4"
 
 [schemes.catpuccin_mocha.colors.normal]
-black = "#45475a"
-red = "#f38ba8"
-green = "#a6e3a1"
-yellow = "#f9e2af"
+black = "#45475A"
+red = "#F38BA8"
+green = "#A6E3A1"
+yellow = "#F9E2Af"
 blue = "#89b4fa"
-magenta = "#f5c2e7"
-cyan = "#94e2d5"
-white = "#bac2de"
+magenta = "#F5C2E7"
+cyan = "#94E2D5"
+white = "#BAC2DE"
 
 [schemes.catpuccin_mocha.colors.bright]
-black = "#585b70"
-red = "#f38ba8"
-green = "#a6e3a1"
-yellow = "#f9e2af"
-blue = "#89b4fa"
-magenta = "#f5c2e7"
-cyan = "#94e2d5"
-white = "#a6adc8"
+black = "#585B70"
+red = "#F38BA8"
+green = "#A6E3A1"
+yellow = "#F9E2Af"
+blue = "#89B4FA"
+magenta = "#F5C2E7"
+cyan = "#94E2D5"
+white = "#A6ADC8"
 
 [schemes.catpuccin_mocha.colors.selection]
-background = "#f5e0dc"
-foreground = "#1e1e2e"
+background = "#F5E0DC"
+foreground = "#1E1E2E"
 
 [schemes.catpuccin_mocha.colors.cursor]
-cursor = "#f5e0dc"
+cursor = "#F5E0DC"

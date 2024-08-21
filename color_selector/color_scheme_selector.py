@@ -2,11 +2,16 @@ import os
 import toml
 from pathlib import Path
 import shutil
+import subprocess
+
+from zellij_color import set_zellij_color_scheme
+from wezterm_color import set_wezterm_color_scheme
 
 CONFIG_DIR = Path(os.environ['HOME']) / '.config'
-COLOR_SCHEMES_FILE = CONFIG_DIR / 'color_schemes.toml'
+COLOR_SCHEMES_FILE = CONFIG_DIR / 'color_selector' / 'color_schemes.toml'
 ALACRITTY_THEME_FILE = CONFIG_DIR / 'alacritty' / 'current_scheme.toml'
 ZELLIJ_THEME_FILE = CONFIG_DIR / 'zellij' / 'theme' / 'scheme.kdl'
+WEZTERM_THEME_FILE = CONFIG_DIR / 'wezterm' / 'color.lua'
 
 def load_schemes():
     """Load the color schemes from the TOML file."""
@@ -56,46 +61,18 @@ def is_zellij_installed():
     """Check if Zellij is installed."""
     return shutil.which('zellij') is not None
 
-def map_color_scheme(scheme_data):
-    """Map the color scheme to Zellij format."""
-    primary_colors = scheme_data['colors']['primary']
-    normal_colors = scheme_data['colors']['normal']
-
-    color_mappings = {
-        'fg': 'foreground',
-        'bg': 'background',
-        'orange': 'red',
-    }
-
-    color_properties = [
-        'fg', 'bg', 'red', 'green', 'yellow', 'blue', 'cyan', 'magenta', 'orange', 'black', 'white'
-    ]
-
-    color_string = "themes {\n   default {\n"
-    for prop in color_properties:
-        if prop in ['fg', 'bg',]:
-            color_string += f"      {prop} \"{primary_colors[color_mappings[prop]]}\"\n"
-        elif prop in ['orange']:
-            color_string += f"      {prop} \"{normal_colors[color_mappings[prop]]}\"\n"
-        else:
-            color_string += f"      {prop} \"{normal_colors[prop]}\"\n"
-    color_string += "   }\n}"
-
-    return color_string
-def save_kdl_file(color_string):
-    """Save the Zellij color scheme to a KDL file."""
+def is_wezterm_installed():
+    """Check if WezTerm is installed as a Flatpak."""
     try:
-        with open(ZELLIJ_THEME_FILE, 'w') as file:
-            file.write(color_string)
-    except IOError:
-        print(f"Error: Failed to write to {ZELLIJ_THEME_FILE}.")
-        exit(1)
-
-def set_zellij_color_scheme(scheme_data):
-    """Set the Zellij color scheme."""
-    color_string = map_color_scheme(scheme_data)
-    save_kdl_file(color_string)
-    os.system('zellij ka -y > /dev/null 2>&1')
+        result = subprocess.run(['flatpak', 'list'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        if 'WezTerm' in result.stdout:
+            return True
+        elif shutil.which('wezterm') is not None:
+            return True 
+        else:
+            return False
+    except FileNotFoundError:
+        print("Flatpak is not installed on this system.")
 
 def get_user_confirmation():
     """Prompt the user for confirmation."""
@@ -120,8 +97,13 @@ def set_color_schemes():
     scheme_data = data['schemes'][schemes[current_scheme]]
     save_toml_file(scheme_data)
 
-    if is_zellij_installed():
-        set_zellij_color_scheme(scheme_data)
+    # if wezterm is installed
+    if is_wezterm_installed():
+        set_wezterm_color_scheme(scheme_data, WEZTERM_THEME_FILE)
 
+    # if zellij is installed
+    if is_zellij_installed():
+        set_zellij_color_scheme(scheme_data, ZELLIJ_THEME_FILE)
+        
 if __name__ == "__main__":
     set_color_schemes()
