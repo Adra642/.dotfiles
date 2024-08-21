@@ -6,6 +6,7 @@ import subprocess
 
 from zellij_color import set_zellij_color_scheme
 from wezterm_color import set_wezterm_color_scheme
+from alacritty_color import set_alacritty_color_scheme
 
 CONFIG_DIR = Path(os.environ['HOME']) / '.config'
 COLOR_SCHEMES_FILE = CONFIG_DIR / 'color_selector' / 'color_schemes.toml'
@@ -13,7 +14,15 @@ ALACRITTY_THEME_FILE = CONFIG_DIR / 'alacritty' / 'current_scheme.toml'
 ZELLIJ_THEME_FILE = CONFIG_DIR / 'zellij' / 'theme' / 'scheme.kdl'
 WEZTERM_THEME_FILE = CONFIG_DIR / 'wezterm' / 'color.lua'
 
-def load_schemes():
+def get_user_confirmation():
+    """Prompt the user for confirmation."""
+    while True:
+        user_input = input("\033[31m" + "Warning: " + "\033[0m" + "The script will close Zellij if it is running. Do you want to continue? (y/n): ").strip().lower()
+        if user_input in ['y', 'n']:
+            return user_input == 'y'
+        print("Invalid input. Please enter 'y' or 'n'.")
+
+def load_color_schemes():
     """Load the color schemes from the TOML file."""
     try:
         with open(COLOR_SCHEMES_FILE, 'r') as file:
@@ -25,7 +34,7 @@ def load_schemes():
         print(f"Error: Failed to decode {COLOR_SCHEMES_FILE}.")
         exit(1)
 
-def show_schemes(schemes):
+def show_available_schemes(schemes):
     """Display the available color schemes."""
     print("\033[94m" + "Available schemes:" + "\033[0m")
     for i, scheme in enumerate(schemes):
@@ -47,42 +56,20 @@ def select_scheme(schemes):
         except ValueError:
             print("\033[31mInvalid input. Please enter an integer.\033[0m")
 
-def save_toml_file(scheme_data):
-    """Save the selected color scheme to a TOML file."""
-    try:
-        toml_string = toml.dumps(scheme_data)
-        with open(ALACRITTY_THEME_FILE, 'w') as file:
-            file.write(toml_string)
-    except IOError:
-        print(f"Error: Failed to write to {ALACRITTY_THEME_FILE}.")
-        exit(1)
-
-def is_zellij_installed():
-    """Check if Zellij is installed."""
-    return shutil.which('zellij') is not None
-
-def is_wezterm_installed():
-    """Check if WezTerm is installed as a Flatpak."""
+def is_installed(program):
+    """Check if a program is installed."""
     try:
         result = subprocess.run(['flatpak', 'list'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-        if 'WezTerm' in result.stdout:
+        if program in result.stdout:
             return True
-        elif shutil.which('wezterm') is not None:
+        elif shutil.which(program) is not None:
             return True 
         else:
             return False
     except FileNotFoundError:
         print("Flatpak is not installed on this system.")
 
-def get_user_confirmation():
-    """Prompt the user for confirmation."""
-    while True:
-        user_input = input("\033[31m" + "Warning: " + "\033[0m" + "The script will close Zellij if it is running. Do you want to continue? (y/n): ").strip().lower()
-        if user_input in ['y', 'n']:
-            return user_input == 'y'
-        print("Invalid input. Please enter 'y' or 'n'.")
-
-def set_color_schemes():
+def set_color_scheme():
     """Main function to set the color schemes."""
     print("\033[32m" + "Info: " + "\033[0m" + "This script will change the color schemes for Zellij, WezTerm, and Alacritty.")
 
@@ -90,20 +77,23 @@ def set_color_schemes():
         print("Operation cancelled by the user.")
         return
 
-    data = load_schemes()
+    data = load_color_schemes()
     schemes = list(data['schemes'].keys())
-    show_schemes(schemes)
+    show_available_schemes(schemes)
     current_scheme = select_scheme(schemes)
     scheme_data = data['schemes'][schemes[current_scheme]]
-    save_toml_file(scheme_data)
+    
+    # Checks if Alacritty is installed
+    if is_installed('alacritty'):
+        set_alacritty_color_scheme(ALACRITTY_THEME_FILE, scheme_data)
 
-    # if wezterm is installed
-    if is_wezterm_installed():
-        set_wezterm_color_scheme(scheme_data, WEZTERM_THEME_FILE)
+    # Checks if Wezterm is installed
+    if is_installed('wezterm'):
+        set_wezterm_color_scheme(WEZTERM_THEME_FILE, scheme_data)
 
-    # if zellij is installed
-    if is_zellij_installed():
-        set_zellij_color_scheme(scheme_data, ZELLIJ_THEME_FILE)
+    # Checks if Zellij is installed
+    if is_installed('zellij'):
+        set_zellij_color_scheme(ZELLIJ_THEME_FILE, scheme_data)
         
 if __name__ == "__main__":
-    set_color_schemes()
+    set_color_scheme()
