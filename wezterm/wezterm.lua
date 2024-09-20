@@ -31,6 +31,8 @@ wezterm.on('gui-attached', function(domain)
   end
 end)
 
+config.alternate_buffer_wheel_scroll_speed = 5
+
 config.window_padding = {
     left = 20,
     right = 20,
@@ -38,19 +40,24 @@ config.window_padding = {
     bottom = 5,
   }
 
-config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
-config.integrated_title_buttons = { 'Hide', 'Maximize', 'Close' }
-
 -- Font
 config.font = wezterm.font{
     family='IosevkaTerm NF',
-    weight= 'Medium',
+    weight= 'DemiBold',
 }
+
+config.bold_brightens_ansi_colors = false;
+
+config.window_frame = {
+  font = wezterm.font('IosevkaTerm NF', { weight = 'Bold' }),
+  font_size = 12,
+}
+
 config.font_size = 15
 config.line_height = 1.24
 
 --Cursor
-config.default_cursor_style = 'SteadyBar'
+config.default_cursor_style = 'SteadyUnderline'
 config.cursor_thickness = "1.0"
 
 -- Tab bar:

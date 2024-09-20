@@ -1,5 +1,5 @@
 username() {
-   echo "%{$fg[red]%}%n:%{$reset_color%}"
+   echo "%{$fg_bold[red]%}%n:%{$reset_color%}"
 }
 
 # current directory, two levels deep
