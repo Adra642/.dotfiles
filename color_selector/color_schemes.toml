@@ -60,35 +60,35 @@ background = "#44415A"
 [schemes.rose_pine_moon.colors.cursor]
 cursor = "#56526E"
 
-[schemes.gotham.colors.primary]
+[schemes.gotham2.colors.primary]
 background = "#0A0F14"
 foreground = "#98D1CE"
 
-[schemes.gotham.colors.normal]
-black = "#0A0F14"
+[schemes.gotham2.colors.normal]
+black = "#1A232C"
 red = "#C33027"
 green = "#26A98B"
-yellow = "#EDB54B"
-blue = "#195465"
+yellow = "#E1AA46"
+blue = "#1C5A6C"
 magenta = "#4E5165"
 cyan = "#33859D"
 white = "#98D1CE"
 
-[schemes.gotham.colors.bright]
-black = "#10151B"
+[schemes.gotham2.colors.bright]
+black = "#57606D"
 red = "#D26939"
-green = "#081F2D"
-yellow = "#245361"
-blue = "#093748"
+green = "#31D2AD"
+yellow = "#FABE50"
+blue = "#207B9C"
 magenta = "#888BA5"
 cyan = "#599CAA"
 white = "#D3EBE9"
 
-[schemes.gotham.colors.selection]
+[schemes.gotham2.colors.selection]
 background = "#1E4962"
 foreground = "#FEE4CE"
 
-[schemes.gotham.colors.cursor]
+[schemes.gotham2.colors.cursor]
 cursor = "#FCA02F"
 
 [schemes.kanagawa.colors.primary]
