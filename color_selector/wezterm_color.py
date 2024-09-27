@@ -48,6 +48,7 @@ def extract_colors(scheme_data):
         selection_bg = "{selection['background']}",
         selection_fg = "{selection['foreground']}",
 
+        cursor_bg = "{cursor['cursor']}",
         cursor_border = "{cursor['cursor']}",
     }}    
     """
