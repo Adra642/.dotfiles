@@ -30,8 +30,8 @@ foreground = "#FEE4CE"
 cursor = "#FCA02F"
 
 [schemes.rose_pine_moon.colors.primary]
-foreground = "#E0DEF4"
 background = "#232136"
+foreground = "#E0DEF4"
 
 [schemes.rose_pine_moon.colors.normal]
 black = "#393552"
@@ -54,8 +54,8 @@ cyan = "#EA9A97"
 white = "#E0DEF4"
 
 [schemes.rose_pine_moon.colors.selection]
-foreground = "#E0DEF4"
 background = "#44415A"
+foreground = "#E0DEF4"
 
 [schemes.rose_pine_moon.colors.cursor]
 cursor = "#56526E"
@@ -85,11 +85,11 @@ cyan = "#599CAA"
 white = "#D3EBE9"
 
 [schemes.gotham2.colors.selection]
-background = "#1E4962"
-foreground = "#FEE4CE"
+background = "#4E6174"
+foreground = "#D3EBE9"
 
 [schemes.gotham2.colors.cursor]
-cursor = "#FCA02F"
+cursor = "#98D1CE"
 
 [schemes.kanagawa.colors.primary]
 background = "#1F1F28"
@@ -122,33 +122,95 @@ foreground = "#C8C093"
 [schemes.kanagawa.colors.cursor]
 cursor = "#969384"
 
-[schemes.catpuccin_mocha.colors.primary]
-background = "#1e1e2e"
-foreground = "#cdd6f4"
+[schemes.breath_silverfox.colors.primary]
+background = "#1E2229"
+foreground = "#BBBBBB"
 
-[schemes.catpuccin_mocha.colors.normal]
-black = "#45475A"
-red = "#F38BA8"
-green = "#A6E3A1"
-yellow = "#F9E2Af"
-blue = "#89b4fa"
-magenta = "#F5C2E7"
-cyan = "#94E2D5"
-white = "#BAC2DE"
+[schemes.breath_silverfox.colors.normal]
+black = "#1E2229"
+red = "#ED1515"
+green = "#44853A"
+yellow = "#F67400"
+blue = "#1D99F3"
+magenta = "#9B59B6"
+cyan = "#1ABC9C"
+white = "#FCFCFC"
 
-[schemes.catpuccin_mocha.colors.bright]
-black = "#585B70"
-red = "#F38BA8"
-green = "#A6E3A1"
-yellow = "#F9E2Af"
-blue = "#89B4FA"
-magenta = "#F5C2E7"
-cyan = "#94E2D5"
-white = "#A6ADC8"
+[schemes.breath_silverfox.colors.bright]
+black = "#7F8C8D"
+red = "#C0392B"
+green = "#55A649"
+yellow = "#FDBC4B"
+blue = "#3DAEE9"
+magenta = "#8E44AD"
+cyan = "#16A085"
+white = "#FFFFFF"
 
-[schemes.catpuccin_mocha.colors.selection]
-background = "#F5E0DC"
-foreground = "#1E1E2E"
+[schemes.breath_silverfox.colors.selection]
+background = "#545D6D"
+foreground = "#FFFFFF"
 
-[schemes.catpuccin_mocha.colors.cursor]
-cursor = "#F5E0DC"
+[schemes.breath_silverfox.colors.cursor]
+cursor = "#BBBBBB"
+
+[schemes.lavandula2.colors.primary]
+background = "#050014"
+foreground = "#817A8C"
+
+[schemes.lavandula2.colors.normal]
+black = "#140033"
+red = "#7D1625"
+green = "#276458"
+yellow = "#B39B68"
+blue = "#746CB8"
+magenta = "#5A3F7F"
+cyan = "#58777F"
+white = "#817A8C"
+
+[schemes.lavandula2.colors.bright]
+black = "#63537C"
+red = "#E05167"
+green = "#52E0C4"
+yellow = "#E0C386"
+blue = "#8E87E0"
+magenta = "#A776E0"
+cyan = "#9AD4E0"
+white = "#A69EB4"
+
+[schemes.lavandula2.colors.selection]
+background = "#3B2369"
+foreground = "#A69EB4"
+
+[schemes.lavandula2.colors.cursor]
+cursor = "#817A8C"
+
+[schemes.neutron.colors.primary]
+background = "#1C1E22"
+foreground = "#E6E8EF"
+
+[schemes.neutron.colors.normal]
+black = "#23252B"
+red = "#B54036"
+green = "#5AB977"
+yellow = "#DEB566"
+blue = "#6A7C93"
+magenta = "#A4799D"
+cyan = "#3F94A8"
+white = "#E6E8EF"
+
+[schemes.neutron.colors.bright]
+black = "#868D9F"
+red = "#B54036"
+green = "#5AB977"
+yellow = "#DEB566"
+blue = "#6A7C93"
+magenta = "#A4799D"
+cyan = "#3F94A8"
+white = "#EBEDF2"
+
+[schemes.neutron.colors.selection]
+background = "#636973"
+foreground = "#EBEDF2"
+
+[schemes.neutron.colors.cursor]
+cursor = "#E6E8EF"
