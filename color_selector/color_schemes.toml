@@ -214,3 +214,35 @@ foreground = "#EBEDF2"
 
 [schemes.neutron.colors.cursor]
 cursor = "#E6E8EF"
+
+[schemes.night.colors.primary]
+background = "#040B14"
+foreground = "#B6B3E4"
+
+[schemes.night.colors.normal]
+black = "#0A2140"
+red = "#6F52C8"
+green = "#187B67"
+yellow = "#D199AA"
+blue = "#1F66C2"
+magenta = "#A4799D"
+cyan = "#386BAD"
+white = "#B6B3E4"
+
+[schemes.night.colors.bright]
+black = "#6282B5"
+red = "#886CE5"
+green = "#2FCDAD"
+yellow = "#FFBACE"
+blue = "#3A77D6"
+magenta = "#BF8EB7"
+cyan = "#4B8CDF"
+white = "#D1C9FF"
+
+[schemes.night.colors.selection]
+background = "#1E58A5"
+foreground = "#D1C9FF"
+
+[schemes.night.colors.cursor]
+cursor = "#674CBA"
+cursor_border = "#674CBA"
