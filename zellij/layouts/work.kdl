@@ -3,10 +3,6 @@ layout {
         pane
     }
 
-    tab name="Htop" {
-        pane command="htop"
-    }
-
     default_tab_template {
         children 
         pane size=1 borderless=true {
