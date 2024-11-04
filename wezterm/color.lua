@@ -30,6 +30,7 @@ function module.set_color_scheme(config)
         selection_bg = "#2D4F67",
         selection_fg = "#C8C093",
 
+        cursor_bg = "#969384",
         cursor_border = "#969384",
     }    
     
