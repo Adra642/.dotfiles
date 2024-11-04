@@ -1,19 +1,24 @@
 username() {
-   echo "%{$fg_bold[red]%}%n:%{$reset_color%}"
+   echo "%B%F{red}%n:%f%b"
 }
 
-# current directory, two levels deep
 directory() {
-   echo "%{$fg[green]%}%2~%{$reset_color%}"
+   echo "%F{green}%2~%f"
 }
 
 status() {
-   echo "%(?:%{$fg[cyan]%}%1{󰶻%}:%{$fg[red]%}%1{󰶻%})"
+   echo "$(if [[ $? -eq 0 ]]; then echo "%F{cyan}"; else echo "%F{red}"; fi)󰶻%f"
 }
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}±[%{$fg[red]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%}]✗ %{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[yellow]%}] "
+adra() {
+   # ZSH_THEME_GIT_PROMPT_PREFIX="%F{yellow}%f±[%F{red}%f"
+   # ZSH_THEME_GIT_PROMPT_SUFFIX="%F{red}%"
+   # ZSH_THEME_GIT_PROMPT_DIRTY="%F{yellow}%f]✗ %F{red}%"
+   # ZSH_THEME_GIT_PROMPT_CLEAN="%%F{yellow}%f] "
+   # $(git_prompt_info)
+   
+   PROMPT="$(username) $(directory) $(status) "
+}
 
-PROMPT='$(username) $(directory) $(git_prompt_info)$(status)  '
+adra
+
