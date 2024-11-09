@@ -25,13 +25,23 @@ pointer:red,\
 marker:green,\
 prompt:yellow"
 
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules,target,.gradle,.idea,.vscode,.cache,.angular
+  --preview 'bat -n --color=always {}'
+  --preview-window 'border-bold'
+  --bind 'ctrl-/:change-preview-window(hidden|)'"
+
 export FZF_DEFAULT_OPTS="--height 60% \
---border \
---layout reverse \
+--border bold \
+--reverse \
 --color '$FZF_COLORS' \
+--no-scrollbar \
 --prompt '󰔰 ' \
---pointer 󰜴 \
---marker 󰨃"
+--pointer 󰨃 \
+--marker "
+
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
 
 #Bun
 export BUN_INSTALL="$HOME/.bun"
