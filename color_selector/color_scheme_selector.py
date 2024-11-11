@@ -11,7 +11,7 @@ from alacritty_color import set_alacritty_color_scheme
 CONFIG_DIR = Path(os.environ['HOME']) / '.config'
 COLOR_SCHEMES_FILE = CONFIG_DIR / 'color_selector' / 'color_schemes.toml'
 ALACRITTY_THEME_FILE = CONFIG_DIR / 'alacritty' / 'current_scheme.toml'
-ZELLIJ_THEME_FILE = CONFIG_DIR / 'zellij' / 'theme' / 'scheme.kdl'
+ZELLIJ_THEME_FILE = CONFIG_DIR / 'zellij' / 'themes' / 'scheme.kdl'
 WEZTERM_THEME_FILE = CONFIG_DIR / 'wezterm' / 'color.lua'
 
 def get_user_confirmation():

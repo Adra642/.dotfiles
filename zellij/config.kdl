@@ -502,7 +502,7 @@ scrollback_editor "/usr/bin/nvim"
 // The folder in which Zellij will look for themes
 // (Requires restart)
 //
-theme_dir "/home/ardam/.config/zellij/theme"
+// layout_dir "/path/to/my/theme_dir"
 
 // Enable or disable the rendering of styled and colored underlines (undercurl).
 // May need to be disabled for certain unsupported terminals
