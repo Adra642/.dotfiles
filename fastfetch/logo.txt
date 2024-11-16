@@ -1,0 +1,19 @@
+$1                 ._._._._._._._
+$1            _.ffffffffffffffffffff:.
+$1        .:fffffffffffffffffffffffffff:.
+$1     .:fffffffffffffffffffffffffffffffff:.
+$1   .fffffffffffffffffffff$2ddddddd$1fffffffffff;
+$1  .fffffffffffffffffff”$2dddddddddddd$1fffffffff;
+$1 .fffffffffffffffffff’$2dddd$1fffff:$2dddd$1fffffffff;
+$1 ffffffffffffffffffff$2dddd$1fffffff$2dddd$1ffffffffff;
+$1:ffffffffffffffffffff$2dddd$1ffffffff$2ddd$1fffffffffff;
+$1:ffffffffffffff$2dddd$1ff$2ddddddddd$1fffffffffffffffff;
+$1:fffffffff”$2dddddddd$1ff$2ddddddddd$1fffffffffffffffff:
+$1:fffffff’$2dddd$1.fffffff$2dddd$1ffffffffffffffffffffff;
+$1:ffffff’$2ddd$1:fffffffff$2dddd$1fffffffffffffffffffff;
+$1:ffffff:$2ddd$1‘:ffffffff$2dddd$1ffffffffffffffffffff;
+$1:fffffff.$2dddd$1‘fffff’$2dddd$1ffffffffffffffffffff”
+$1:fffffffff.$2ddddddddddd$1fffffffffffffffffffff”
+$1:ffffffffffffff$2ddd$1ffffffffffffffffffffff”
+$1:fffffffffffffffffffffffffffffffffff’”
+$1 ‘:ffffffffffffffffffffffffffff’”
