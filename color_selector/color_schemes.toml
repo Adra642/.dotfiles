@@ -7,7 +7,7 @@ black = "#17384C"
 red = "#D15123"
 green = "#027C9B"
 yellow = "#FCA02F"
-blue = "#1E4950"
+blue = "#2E6973"
 magenta = "#68D4F1"
 cyan = "#87ACB4"
 white = "#DEB88D"
@@ -122,40 +122,40 @@ foreground = "#C8C093"
 [schemes.kanagawa.colors.cursor]
 cursor = "#969384"
 
-[schemes.breath_silverfox.colors.primary]
-background = "#1E2229"
-foreground = "#BBBBBB"
+[schemes.lunaria_eclipse2.colors.primary]
+background = "#192125"
+foreground = "#C9CDD7"
 
-[schemes.breath_silverfox.colors.normal]
-black = "#1E2229"
-red = "#ED1515"
-green = "#44853A"
-yellow = "#F67400"
-blue = "#1D99F3"
-magenta = "#9B59B6"
-cyan = "#1ABC9C"
-white = "#FCFCFC"
+[schemes.lunaria_eclipse2.colors.normal]
+black = "#323F46"
+red = "#83615B"
+green = "#7F9781"
+yellow = "#A69875"
+blue = "#68668B"
+magenta = "#856880"
+cyan = "#7D96B2"
+white = "#C9CDD7"
 
-[schemes.breath_silverfox.colors.bright]
-black = "#7F8C8D"
-red = "#C0392B"
-green = "#55A649"
-yellow = "#FDBC4B"
-blue = "#3DAEE9"
-magenta = "#8E44AD"
-cyan = "#16A085"
-white = "#FFFFFF"
+[schemes.lunaria_eclipse2.colors.bright]
+black = "#3D4950"
+red = "#BA9088"
+green = "#BEDBC1"
+yellow = "#F1DFB4"
+blue = "#8C8ABA"
+magenta = "#BE9CB8"
+cyan = "#BCDBFF"
+white = "#DFE2ED"
 
-[schemes.breath_silverfox.colors.selection]
-background = "#545D6D"
-foreground = "#FFFFFF"
+[schemes.lunaria_eclipse2.colors.selection]
+background = "#7793A0"
+foreground = "#DFE2ED"
 
-[schemes.breath_silverfox.colors.cursor]
-cursor = "#BBBBBB"
+[schemes.lunaria_eclipse2.colors.cursor]
+cursor = "#68668B"
 
 [schemes.lavandula2.colors.primary]
 background = "#050014"
-foreground = "#817A8C"
+foreground = "#C6BBD5"
 
 [schemes.lavandula2.colors.normal]
 black = "#140033"
@@ -165,7 +165,7 @@ yellow = "#B39B68"
 blue = "#746CB8"
 magenta = "#5A3F7F"
 cyan = "#58777F"
-white = "#817A8C"
+white = "#C6BBD5"
 
 [schemes.lavandula2.colors.bright]
 black = "#63537C"
@@ -175,14 +175,14 @@ yellow = "#E0C386"
 blue = "#8E87E0"
 magenta = "#A776E0"
 cyan = "#9AD4E0"
-white = "#A69EB4"
+white = "#D8CCE9"
 
 [schemes.lavandula2.colors.selection]
 background = "#3B2369"
-foreground = "#A69EB4"
+foreground = "#D8CCE9"
 
 [schemes.lavandula2.colors.cursor]
-cursor = "#817A8C"
+cursor = "#C6BBD5"
 
 [schemes.neutron.colors.primary]
 background = "#1C1E22"
