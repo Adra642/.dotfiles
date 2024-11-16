@@ -18,7 +18,7 @@
     ]
   },
   "logo": {
-    "source": "/home/ardam/.dotfiles/fastfetch/logo.txt",
+    "source": "~/.dotfiles/fastfetch/logo.txt",
     "height": 12,
     "color": {
       "1": "blue",
@@ -137,7 +137,6 @@
       "type": "custom",
       "format": "┗{$6} {#30}  {#31}  {#32}  {#33}  {#34}  {#35}  {#36}  {#37}  ━━ {#97}  {#96}  {#95}  {#94}  {#93}  {#92}  {#91}  {#90}  {#32}{$6}",
       "outputColor": "green"
-    },
-    "colors"
+    }
   ]
 }
