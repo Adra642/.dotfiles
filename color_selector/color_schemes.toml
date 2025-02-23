@@ -122,67 +122,67 @@ foreground = "#C8C093"
 [schemes.kanagawa.colors.cursor]
 cursor = "#969384"
 
-[schemes.lunaria_eclipse2.colors.primary]
-background = "#192125"
-foreground = "#C9CDD7"
+[schemes.mecha.colors.primary]
+background = "#260D22"
+foreground = "#BF9775"
 
-[schemes.lunaria_eclipse2.colors.normal]
-black = "#323F46"
-red = "#83615B"
-green = "#7F9781"
-yellow = "#A69875"
-blue = "#68668B"
-magenta = "#856880"
-cyan = "#7D96B2"
-white = "#C9CDD7"
+[schemes.mecha.colors.normal]
+black = "#36112B"
+red = "#D94A3D"
+green = "#606940"
+yellow = "#F0AE3F"
+blue = "#306885"
+magenta = "#732D46"
+cyan = "#79ABA3"
+white = "#BF9775"
 
-[schemes.lunaria_eclipse2.colors.bright]
-black = "#3D4950"
-red = "#BA9088"
-green = "#BEDBC1"
-yellow = "#F1DFB4"
-blue = "#8C8ABA"
-magenta = "#BE9CB8"
-cyan = "#BCDBFF"
-white = "#DFE2ED"
+[schemes.mecha.colors.bright]
+black = "#7D6578"
+red = "#E9542E"
+green = "#737E56"
+yellow = "#EDB060"
+blue = "#4C8A8E"
+magenta = "#A9496F"
+cyan = "#A9E2EE"
+white = "#D1B998"
 
-[schemes.lunaria_eclipse2.colors.selection]
+[schemes.mecha.colors.selection]
 background = "#7793A0"
-foreground = "#DFE2ED"
+foreground = "#D1B998"
 
-[schemes.lunaria_eclipse2.colors.cursor]
-cursor = "#68668B"
+[schemes.mecha.colors.cursor]
+cursor = "#E9542E"
 
-[schemes.lavandula2.colors.primary]
-background = "#050014"
-foreground = "#C6BBD5"
+[schemes.forest.colors.primary]
+background = "#283C2D"
+foreground = "#FAF5EB"
 
-[schemes.lavandula2.colors.normal]
-black = "#140033"
-red = "#7D1625"
-green = "#276458"
-yellow = "#B39B68"
-blue = "#746CB8"
-magenta = "#5A3F7F"
-cyan = "#58777F"
-white = "#C6BBD5"
+[schemes.forest.colors.normal]
+black = "#292228"
+red = "#D96523"
+green = "#94A60A"
+yellow = "#D9A404"
+blue = "#5979D9"
+magenta = "#F2A999"
+cyan = "#B8B0D9"
+white = "#FAF5EB"
 
-[schemes.lavandula2.colors.bright]
-black = "#63537C"
-red = "#E05167"
-green = "#52E0C4"
-yellow = "#E0C386"
-blue = "#8E87E0"
-magenta = "#A776E0"
-cyan = "#9AD4E0"
-white = "#D8CCE9"
+[schemes.forest.colors.bright]
+black = "#B591AC"
+red = "#FF7729"
+green = "#C8E00D"
+yellow = "#EDC97B"
+blue = "#698EFF"
+magenta = "#FFB2A1"
+cyan = "#CBC2F0"
+white = "#FFFAF0"
 
-[schemes.lavandula2.colors.selection]
-background = "#3B2369"
-foreground = "#D8CCE9"
+[schemes.forest.colors.selection]
+background = "#4F7957"
+foreground = "#FFFAF0"
 
-[schemes.lavandula2.colors.cursor]
-cursor = "#C6BBD5"
+[schemes.forest.colors.cursor]
+cursor = "#5979D9"
 
 [schemes.neutron.colors.primary]
 background = "#1C1E22"
@@ -245,3 +245,34 @@ foreground = "#D1C9FF"
 
 [schemes.night.colors.cursor]
 cursor = "#674CBA"
+
+[schemes.oldworld.colors.primary]
+background = "#000000"
+foreground = "#C9C7CD"
+
+[schemes.oldworld.colors.normal]
+black = "#000000"
+red = "#EA83A5"
+green = "#90B99F"
+yellow = "#E6B99D"
+blue = "#85B5BA"
+magenta = "#92A2D5"
+cyan = "#85B5BA"
+white = "#C9C7CD"
+
+[schemes.oldworld.colors.bright]
+black = "#4C566A"
+red = "#EA83A5"
+green = "#90B99F"
+yellow = "#E6B99D"
+blue = "#85B5BA"
+magenta = "#92A2D5"
+cyan = "#85B5BA"
+white = "#C9C7CD"
+
+[schemes.oldworld.colors.selection]
+background = "#3B4252"
+foreground = "#C9C7CD"
+
+[schemes.oldworld.colors.cursor]
+cursor = "#92A2D5"
