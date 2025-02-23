@@ -40,6 +40,9 @@ export FZF_DEFAULT_OPTS="--height 60% \
 --pointer 󰨃 \
 --marker "
 
+#Bat 
+export BAT_THEME="base16"
+
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 
