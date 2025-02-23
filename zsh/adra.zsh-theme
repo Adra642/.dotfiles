@@ -1,3 +1,5 @@
+autoload -Uz vcs_info
+
 username() {
    echo "%B%F{red}%n:%f%b"
 }
@@ -7,18 +9,27 @@ directory() {
 }
 
 status() {
-   echo "$(if [[ $? -eq 0 ]]; then echo "%F{cyan}"; else echo "%F{red}"; fi)󰶻%f"
+   echo " $(if [[ $? -eq 0 ]]; then echo "%F{cyan}"; else echo "%F{red}"; fi)󰶻%f"
 }
 
-adra() {
-   # ZSH_THEME_GIT_PROMPT_PREFIX="%F{yellow}%f±[%F{red}%f"
-   # ZSH_THEME_GIT_PROMPT_SUFFIX="%F{red}%"
-   # ZSH_THEME_GIT_PROMPT_DIRTY="%F{yellow}%f]✗ %F{red}%"
-   # ZSH_THEME_GIT_PROMPT_CLEAN="%%F{yellow}%f] "
-   # $(git_prompt_info)
-   
-   PROMPT="$(username) $(directory) $(status) "
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' unstagedstr '✗'
+zstyle ':vcs_info:git:*' formats ' %F{yellow}±[%F{red}%b%F{yellow}]%u'
+zstyle ':vcs_info:*' enable git
+
+precmd() {
+   vcs_info
+}
+
+git_branch() {
+   if [[ -n ${vcs_info_msg_0_} ]]; then
+      echo "${vcs_info_msg_0_}"
+   fi
+}
+
+adra() { 
+   setopt PROMPT_SUBST
+   PROMPT='$(username) $(directory)$(git_branch)$(status) '
 }
 
 adra
-
