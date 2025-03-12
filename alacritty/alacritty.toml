@@ -5,13 +5,15 @@ import = ["~/.config/alacritty/current_scheme.toml"]
 opacity = 0.85
 padding = { x = 20, y = 15 }
 startup_mode = "Maximized"
+decorations_theme_variant = "Dark"
+
+[scrolling]
+multiplier = 5
 
 [font]
 normal = { family = "IosevkaTerm NF", style = "SemiBold" }
 italic = { style = "SemiBold Italic" }
 size = 15
-# builtin_box_drawing = false
-# offset = { x = 2, y = 2 }
 
 [cursor.style]
 shape = "Beam"
