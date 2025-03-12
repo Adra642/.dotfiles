@@ -15,6 +15,7 @@ status() {
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' unstagedstr '✗'
 zstyle ':vcs_info:git:*' formats ' %F{yellow}±[%F{red}%b%F{yellow}]%u'
+zstyle ':vcs_info:git:*' actionformats ' %F{yellow}±[%F{red}%b%F{yellow}|%F{cyan}%a%F{yellow}]%u%c'
 zstyle ':vcs_info:*' enable git
 
 precmd() {

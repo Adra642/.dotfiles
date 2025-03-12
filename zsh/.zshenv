@@ -49,3 +49,5 @@ export MANROFFOPT="-c"
 #Bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# export PATH=$PATH:$HOME/sonar-scanner-6.2.1.4610-linux-x64/bin
