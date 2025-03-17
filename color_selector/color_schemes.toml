@@ -154,35 +154,35 @@ foreground = "#D1B998"
 cursor = "#E9542E"
 
 [schemes.forest.colors.primary]
-background = "#283C2D"
-foreground = "#FAF5EB"
+background = "#102426"
+foreground = "#CCE2D0"
 
 [schemes.forest.colors.normal]
-black = "#292228"
-red = "#D96523"
-green = "#94A60A"
-yellow = "#D9A404"
-blue = "#5979D9"
-magenta = "#F2A999"
-cyan = "#B8B0D9"
-white = "#FAF5EB"
+black = "#091718"
+red = "#BF2604"
+green = "#0D814D"
+yellow = "#8b7d51"
+blue = "#3F679D"
+magenta = "#72A27A"
+cyan = "#5377A6"
+white = "#CCE2D0"
 
 [schemes.forest.colors.bright]
-black = "#B591AC"
-red = "#FF7729"
-green = "#C8E00D"
-yellow = "#EDC97B"
-blue = "#698EFF"
-magenta = "#FFB2A1"
-cyan = "#CBC2F0"
-white = "#FFFAF0"
+black = "#5A9A9E"
+red = "#FA756C"
+green = "#1AC377"
+yellow = "#C9B678"
+blue = "#64A0F0"
+magenta = "#8BC494"
+cyan = "#82B8FF"
+white = "#DDF5E2"
 
 [schemes.forest.colors.selection]
-background = "#4F7957"
-foreground = "#FFFAF0"
+background = "#5ADAE0"
+foreground = "#25555C"
 
 [schemes.forest.colors.cursor]
-cursor = "#5979D9"
+cursor = "#C9B678"
 
 [schemes.neutron.colors.primary]
 background = "#1C1E22"
