@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Random Wallpaper Selector
+Comment=Pick a random image of wallpaper folder
+Exec=/bin/bash -c "$DOTFILES/wallpaper/wallpaper_selector.sh"
+Hidden=false
+Terminal=false
+X-GNOME-Autostart-enabled=true

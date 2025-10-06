@@ -3,6 +3,7 @@ alias lsa='ls -a'
 
 alias fonts='fc-cache -fv'
 alias color='python $HOME/.config/color_selector/color_scheme_selector.py'
+alias wallpaper='$DOTFILES/wallpaper/wallpaper_selector.sh'
 
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
