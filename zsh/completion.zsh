@@ -1,4 +1,4 @@
-fpath=($DOTFILES/zsh/plugins/zsh-completions/src $fpath)
+fpath=($ZPLUGINDIR/zsh-completions/src $fpath)
 
 # Should be called before compinit
 zmodload zsh/complist
@@ -38,7 +38,6 @@ zstyle ':completion:*' file-sort modification
 # Colors for files and directory
 zstyle ':completion:*:*:*:*:default' list-colors ${(s.:.)LS_COLORS}
 
-#####
 # Only display some tags for the command cd
 zstyle ':completion:*:*:cd:*' tag-order local-directories directory-stack path-directories
 

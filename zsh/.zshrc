@@ -1,5 +1,3 @@
-fpath=($DOTFILES/zsh/plugins $fpath)
-
 setopt AUTO_CD              # Go to folder path without using cd.
 
 setopt AUTO_PUSHD           # Push the old directory onto the stack on cd.
@@ -15,52 +13,20 @@ setopt HIST_IGNORE_SPACE         # Do not record an event starting with a space.
 setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
 setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
 
-# Aliases
-source $DOTFILES/zsh/aliases
+# Exports
+source "$DOTFILES/zsh/exports.zsh"
 
 # Prompt Theme
-source $DOTFILES/zsh/adra.zsh-theme
+source $DOTFILES/zsh/theme.zsh
+
+# Plugins
+source $DOTFILES/zsh/plugins.zsh
+
+# Aliases
+source $DOTFILES/zsh/aliases.zsh
 
 # Completions
 source $DOTFILES/zsh/completion.zsh
 
-# Clone a plugin, identify its init file, source it, and add it to your fpath.
-function plugin-load {
-  local repo plugdir initfile initfiles=()
-  for repo in $@; do
-    plugdir=$ZPLUGINDIR/${repo:t}
-    initfile=$plugdir/${repo:t}.plugin.zsh
-    if [[ ! -d $plugdir ]]; then
-      echo "Cloning $repo..."
-      git clone -q --depth 1 --recursive --shallow-submodules \
-        https://github.com/$repo $plugdir
-    fi
-    if [[ ! -e $initfile ]]; then
-      initfiles=($plugdir/*.{plugin.zsh,zsh-theme,zsh,sh}(N))
-      (( $#initfiles )) || { echo >&2 "No init file found '$repo'." && continue }
-      ln -sf $initfiles[1] $initfile
-    fi
-    fpath+=$plugdir
-    . $initfile
-  done
-}
-
-# Plugins list
-plugins=(
-  zsh-users/zsh-autosuggestions
-  zsh-users/zsh-syntax-highlighting
-  zsh-users/zsh-completions
-)
-plugin-load $plugins
-
-# Zellij
-eval "$(zellij setup --generate-auto-start zsh)"
-
-# Fzf
-source <(fzf --zsh)
-
-# Bun completions
-[ -s "/home/ardam/.bun/_bun" ] && source "/home/ardam/.bun/_bun"
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
+# Load integrations
+source $DOTFILES/zsh/integrations.zsh
