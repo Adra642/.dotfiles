@@ -15,7 +15,6 @@ layout {
                 command_user_format   "#[fg=blue,bold,italic]{stdout}{stderr}"
                 command_user_command  "bash -c \"whoami | tr '[:lower:]' '[:upper:]'\""
                 command_user_interval "1"
-                command_NAME_rendermode "static"
 
                 border_enabled  "false"
                 border_char     "─"
@@ -34,7 +33,7 @@ layout {
 
                 datetime        "#[bg=red,fg=black] 󱑎 {format} "
                 datetime_format "%H:%M  󰸗 %a,%d/%m/%y"
-                datetime_timezone "America/Lima"
+                datetime_timezone "Europe/Madrid"
             }
         }
     }
