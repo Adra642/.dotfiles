@@ -7,7 +7,10 @@ function plugin-load {
     if [[ ! -d $plugdir ]]; then
       echo "Cloning $repo..."
       git clone -q --depth 1 --recursive --shallow-submodules \
-        https://github.com/$repo $plugdir
+        https://github.com/$repo $plugdir || {
+          echo >&2 "Failed to clone '$repo'."
+          continue
+        }
     fi
     if [[ ! -e $initfile ]]; then
       initfiles=($plugdir/*.{plugin.zsh,zsh-theme,zsh,sh}(N))
@@ -15,7 +18,7 @@ function plugin-load {
       ln -sf $initfiles[1] $initfile
     fi
     fpath+=$plugdir
-    . $initfile
+    [[ -r $initfile ]] && . "$initfile"
   done
 }
 
