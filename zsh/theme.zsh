@@ -17,12 +17,19 @@ status() {
     local git_status
     
     # Obtener el estado de git
-    git_status=$(git status --porcelain 2>/dev/null)
+    git_status=$(git status --porcelain 2>/dev/null) || return
     
-    # Contar diferentes tipos de archivos con grep
-    untracked_count=$(echo "$git_status" | grep -c "^??")
-    staged_count=$(echo "$git_status" | grep -c "^[MADRC]")
-    modified_count=$(echo "$git_status" | grep -c "^.[MD]")
+    # Retornar temprano si no hay cambios
+    [[ -z "$git_status" ]] && return
+    
+    # Contar en un solo paso usando awk (más eficiente)
+    while IFS= read -r line; do
+        case "${line:0:2}" in
+            "??") ((untracked_count++)) ;;
+            [MADRC]?) ((staged_count++)) ;;
+            ?[MD]) ((modified_count++)) ;;
+        esac
+    done <<< "$git_status"
     
     # Limpiar misc antes de añadir para controlar el orden
     hook_com[misc]=''
