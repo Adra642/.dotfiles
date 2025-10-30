@@ -4,15 +4,13 @@
 # Fzf
 [[ -x "$(command -v fzf)" ]] && source <(fzf --zsh)
 
-# Bun completions
-[ -s "/home/ardam/.bun/_bun" ] && source "/home/ardam/.bun/_bun"
-
 # Angular CLI autocompletion
 [[ -x "$(command -v ng)" ]] && source <(ng completion script)
 
 # Bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
 
 # Cargo
 export CARGO_HOME="${CARGO_HOME:-$HOME/.cargo}"

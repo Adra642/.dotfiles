@@ -28,5 +28,5 @@ source $DOTFILES/zsh/aliases.zsh
 # Completions
 source $DOTFILES/zsh/completion.zsh
 
-# Load integrations
+# Integrations
 source $DOTFILES/zsh/integrations.zsh

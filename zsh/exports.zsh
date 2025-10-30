@@ -1,6 +1,6 @@
 # Directories
-export DOTFILES="$HOME/.dotfiles"
-export ZPLUGINDIR="$ZDOTDIR/plugins"
+export DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+export ZPLUGINDIR="${ZPLUGINDIR:-$ZDOTDIR/plugins}"
 
 # History
 export HISTFILE="$ZDOTDIR/.zhistory"
