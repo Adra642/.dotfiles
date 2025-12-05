@@ -1,32 +1,43 @@
-setopt AUTO_CD              # Go to folder path without using cd.
+#!/usr/bin/env zsh
 
-setopt AUTO_PUSHD           # Push the old directory onto the stack on cd.
-setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
-setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd.
+#━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# ZSH Options
+#━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-setopt SHARE_HISTORY             # Share history between all sessions.
-setopt HIST_EXPIRE_DUPS_FIRST    # Expire a duplicate event first when trimming history.
-setopt HIST_IGNORE_DUPS          # Do not record an event that was just recorded again.
-setopt HIST_IGNORE_ALL_DUPS      # Delete an old recorded event if a new event is a duplicate.
-setopt HIST_FIND_NO_DUPS         # Do not display a previously found event.
-setopt HIST_IGNORE_SPACE         # Do not record an event starting with a space.
-setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
-setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
+# Directory Navigation
+setopt AUTO_CD              # Go to folder path without using cd
+setopt AUTO_PUSHD           # Push the old directory onto the stack on cd
+setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack
+setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd
+
+# History
+setopt SHARE_HISTORY             # Share history between all sessions
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire a duplicate event first when trimming history
+setopt HIST_IGNORE_DUPS          # Do not record an event that was just recorded again
+setopt HIST_IGNORE_ALL_DUPS      # Delete an old recorded event if a new event is a duplicate
+setopt HIST_FIND_NO_DUPS         # Do not display a previously found event
+setopt HIST_IGNORE_SPACE         # Do not record an event starting with a space
+setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file
+setopt HIST_VERIFY               # Do not execute immediately upon history expansion
+
+#━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Source Configuration Files
+#━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 # Exports
-source "$DOTFILES/zsh/exports.zsh"
+[[ -f "$DOTFILES/zsh/exports.zsh" ]] && source "$DOTFILES/zsh/exports.zsh"
 
 # Prompt Theme
-source $DOTFILES/zsh/theme.zsh
+[[ -f "$DOTFILES/zsh/theme.zsh" ]] && source "$DOTFILES/zsh/theme.zsh"
 
 # Plugins
-source $DOTFILES/zsh/plugins.zsh
+[[ -f "$DOTFILES/zsh/plugins.zsh" ]] && source "$DOTFILES/zsh/plugins.zsh"
 
 # Aliases
-source $DOTFILES/zsh/aliases.zsh
+[[ -f "$DOTFILES/zsh/aliases.zsh" ]] && source "$DOTFILES/zsh/aliases.zsh"
 
 # Completions
-source $DOTFILES/zsh/completion.zsh
+[[ -f "$DOTFILES/zsh/completion.zsh" ]] && source "$DOTFILES/zsh/completion.zsh"
 
 # Integrations
-source $DOTFILES/zsh/integrations.zsh
+[[ -f "$DOTFILES/zsh/integrations.zsh" ]] && source "$DOTFILES/zsh/integrations.zsh"
