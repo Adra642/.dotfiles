@@ -12,5 +12,14 @@ if [ -z "$WALLPAPER" ]; then
 fi
 
 # Set the wallpaper for GNOME (light and dark mode)
-gsettings set org.gnome.desktop.background picture-uri "file://$WALLPAPER"
-gsettings set org.gnome.desktop.background picture-uri-dark "file://$WALLPAPER"
+if ! gsettings set org.gnome.desktop.background picture-uri "file://$WALLPAPER"; then
+    echo "Error: Failed to set wallpaper (light mode)"
+    exit 1
+fi
+
+if ! gsettings set org.gnome.desktop.background picture-uri-dark "file://$WALLPAPER"; then
+    echo "Error: Failed to set wallpaper (dark mode)"
+    exit 1
+fi
+
+echo "Wallpaper set successfully: $WALLPAPER"
