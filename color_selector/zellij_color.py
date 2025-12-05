@@ -1,4 +1,4 @@
-import os
+import subprocess
 
 def write_kdl_file(file_path, color_string):
     """Save the Zellij color scheme to a KDL file."""
@@ -40,4 +40,8 @@ def set_zellij_color_scheme(file_path, scheme_data ):
     """Set the Zellij color scheme."""
     color_scheme = map_color_scheme(scheme_data)
     write_kdl_file(file_path,color_scheme)
-    os.system('zellij ka -y > /dev/null 2>&1')
+    # Kill all Zellij sessions to apply new color scheme
+    subprocess.run(['zellij', 'ka', '-y'], 
+                   stdout=subprocess.DEVNULL, 
+                   stderr=subprocess.DEVNULL,
+                   check=False)
