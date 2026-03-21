@@ -5,7 +5,9 @@
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 # Zellij - Terminal multiplexer
-[[ -x "$(command -v zellij)" ]] && eval "$(zellij setup --generate-auto-start zsh)"
+if [[ -z "$ZELLIJ" && -x "$(command -v zellij)" ]]; then
+    exec zellij attach -c default
+fi
 
 # Fzf - Fuzzy finder
 [[ -x "$(command -v fzf)" ]] && source <(fzf --zsh)
