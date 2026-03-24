@@ -5,6 +5,7 @@
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 export ZPLUGINDIR="${ZPLUGINDIR:-$ZDOTDIR/plugins}"
+export PATH="${PATH}:${HOME}/.local/bin"
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # History Configuration
